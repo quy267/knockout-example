@@ -1,0 +1,19 @@
+<h4>
+	<span data-bind="text: sourceName()"></span></h4>
+<hr>
+<div data-bind="foreach: articles">
+	<div class="col s12 m6">
+		<div class="card">
+			<div class="card-image">
+				<img data-bind="attr: {src: urlToImage}">
+				<a href="javascript:void(0)"><span class="card-title" data-bind="text: title, click: function(){ $parent.setSideNavArticle($index()) }"></span></a>
+			</div>
+			<div class="card-content">
+				<p data-bind="text: description"></p>
+			</div>
+			<div class="card-action">
+				<a href="javascript:void(0);" data-bind="click: function(){ application.showActionPage('newsdetail', {articleIndex : $index()}) }">Read more</a>
+			</div>
+		</div>
+	</div>
+</div>

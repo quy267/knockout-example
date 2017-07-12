@@ -1,0 +1,13 @@
+$set-prefix: '', -moz-, -webkit-;
+
+@mixin PropertySetPrefix($name, $value) {
+	@each $prefix in $set-prefix {
+		#{$prefix}#{$name}: $value;
+	}
+}
+
+@mixin ValueSetPrefix($name, $value) {
+	@each $prefix in $set-prefix {
+		#{$name}: #{$prefix}$value;
+	}
+}

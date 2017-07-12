@@ -1,0 +1,42 @@
+.securitykeyboard {
+   padding: 20px 10px;
+
+ .row {
+   input.browser-default[type=password] {
+      font-size: 182%;
+      margin: 10px 10px;
+      padding: 0 7px;
+      background: $securitykeyboardColor;
+      height: 3rem;
+    }
+    }
+
+  .col {
+
+  .block-panel {
+    padding: 10px 20px;
+    background: $securitykeyboardColor;
+   .row {
+     margin-bottom: 20px;
+
+  .btn {
+    width: 45px;
+    margin: 5px;
+    text-transform: none;
+    &.cleartext {
+      background: $btnStateBaseColor;
+      box-shadow: none;
+      z-index: inherit;
+      will-change: inherit;
+      span {
+        display: none;
+      }
+      &:hover {
+        cursor: none;
+      }
+    }
+  }
+}
+}
+}
+}

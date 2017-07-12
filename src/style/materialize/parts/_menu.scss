@@ -1,0 +1,182 @@
+.MenuTab {
+  background: $trueblack;
+  box-shadow: 0px 1px 5px 0px rgba(210, 214, 217, 0.004);
+  position: relative;
+  .menu-tab-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    a {
+      line-height: 28px;
+      height: 28px;
+      width: 50px;
+      padding: 0;
+      background: transparent;
+      text-align: center;
+      i {
+        color: $menuTabIconColor;
+      }
+    }
+
+    background: $white;
+    &:hover {
+      background: $paleblue !important;
+    }
+  }
+  .tabs {
+    background: transparent;
+    box-sizing: border-box;
+    padding-left: 50px;
+    line-height: 28px;
+    height: 28px;
+    .tab {
+      line-height: 28px;
+      height: 28px;
+      max-width: 6rem;
+      a {
+        color: $white;
+        background: transparent;
+        cursor: pointer;
+        font-size: $fontM;
+        border-left: 1px solid $menuTabBorderColor;
+      }
+      @include break-points-m {
+        a {
+          font-size: $fontS;
+        }
+      }
+    }
+    @include break-points-m {
+      .tabs {
+        .tab {
+          a {
+            font-size: $fontS;
+          }
+        }
+      }
+    }
+  }
+
+  &-complex {
+    border-top: 3px solid $gray;
+    margin: 0 0 5px;
+    .tabs {
+      padding-left: 0;
+      height: 30px;
+      .tab {
+        min-width: 63px;
+        height: 30px;
+        line-height: 30px;
+        &:first-child a {
+          border-left: 0;
+        }
+        a {
+          font-size: $fontM;
+          font-weight: normal;
+          &.active {
+            border-bottom: 0;
+            background-color: $white;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bretain {
+  background: $black;
+  color: $white;
+  opacity: 0.8;
+}
+
+.device-sp {
+  nav {
+    $navHeight: 37px;
+    padding: 0 5px;
+    height: $navHeight;
+    line-height: $navHeight;
+    background: $baseColor;
+    i {
+      height: $navHeight;
+      line-height: $navHeight;
+      font-size: 1.8rem;
+    }
+    a.button-collapse {
+      height: $navHeight;
+      line-height: $navHeight;
+      i {
+        height: $navHeight;
+        line-height: $navHeight;
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .menu-title {
+    position: absolute;
+    top: 0px;
+    right: 0.2rem;
+    bottom: 0px;
+    margin: auto auto;
+    text-align: right;
+    font-size: 20px;
+    margin-top:5px;
+  }
+  .menu-title23-container {
+    display: inline-block;
+    line-height: 0.8;
+    position: absolute;
+    top: 0px;
+    right: 2rem;
+    bottom: 0px;
+    margin: auto auto;
+    text-align: right;
+    margin-top: 5px;
+  }
+  .menu-title2 {
+    display: block;
+    font-size: 17px;
+    margin-top: 7px;
+    font-weight: bold;
+  }
+  .menu-title3 {
+    display: inline-block;
+    line-height: 1;
+    font-size: 11px !important;
+  }
+  .brand-add-btn {
+    float: right;
+    line-height: 1;
+    font-size: 19px;
+    margin-top: 0.5rem;
+    i {
+      font-size: $iconS;
+      vertical-align: middle;
+    }
+  }
+
+}
+
+.menusetting {
+  position: fixed;
+  display: block;
+  border: $silver 1px solid;
+  @if $type == white {
+    background-color: $white;
+  } @else {
+    background-color: $black;
+  }
+  &.off {
+    display: none;
+  }
+  li {
+    padding: 2px 0;
+    &:hover {
+      background: $datagrid-hover-color;
+    }
+  }
+  label {
+    font-size: $fontM;
+  }
+}

@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('../fonts/MaterialIcons-Regular.woff2') format('woff2'),
+       url('../fonts/MaterialIcons-Regular.woff') format('woff'),
+       url('../fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OSON Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/OSON-Icon.eot'); /* For IE6-8 */
+  src: local('OSON Icons'),
+  local('OSON-Icon'),
+  url('../fonts/OSON-Icon.woff2') format('woff2'),
+  url('../fonts/OSON-Icon.woff') format('woff'),
+  url('../fonts/OSON-Icon.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.oson-icons {
+  font-family: 'OSON Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+
+  &.icon-none:before {
+    content: "\e900";
+  }
+  &.icon-down:before {
+    content: "\e901";
+  }
+  &.icon-left:before {
+    content: "\e902";
+  }
+  &.icon-up:before {
+    content: "\e904";
+  }
+  &.icon-right:before {
+    content: "\e903";
+  }
+  &.icon-keyboard-arrow-down:before {
+    content: "\e905";
+  }
+  &.icon-keyboard-arrow-left:before {
+    content: "\e906";
+  }
+  &.icon-keyboard-arrow-right:before {
+    content: "\e907";
+  }
+  &.icon-keyboard-arrow-up:before {
+    content: "\e908";
+  }
+}
+
+pre {
+	font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: $fontL;
+    overflow-y: hidden;
+    line-height: 1.3;
+    padding: 3px;
+}
+
+.ComplexPanelArea{
+  .newsdetail{
+    pre{
+      overflow: hidden;
+    }
+  }
+}
+
+.collection .material-icons{
+  padding-left:12px;
+}
+
+/********************************
+ * マーケット 市場統計
+ ********************************/
+.f_market_statistics_head { font-size: 12px !important; color:$item-name-color !important; }

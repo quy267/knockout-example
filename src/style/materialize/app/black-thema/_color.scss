@@ -1,0 +1,104 @@
+//====================================================
+//  _colors.scss
+//====================================================
+
+$type: black;
+
+$baseColor:      #252d39;
+$subColor:       lighten(#222, 15%);
+$accentColor: #69c0b9;
+
+$bgColor: #313336;
+$fontColor: #C4D7DA;
+
+$item-name-color: lighten($fontColor, 50%) !default;
+$white:     #fff;
+$thinWhite: #efefef;
+$silver:    #eaebec;
+$lightgrey:	#F3F3F3;
+$thingray:  #acacac;
+$gray:      #cacbcc;
+$midgrey:   #939ca4;
+$darkgrey:  #5c5c5c;
+$black:     #222;
+$trueblack: #000;
+$red:       #ff0000;
+$navy:      #1f252f;
+$blue:      #0060ff;
+$lightblue: #2196f3;
+$dimgray:   #444444;
+$darkgreen: #008000;
+$orange:    #ffa500;
+$yellow:    #ffff00;
+$lime:      #00ff00;
+
+$plusColor: #ff9eb8;
+$minusColor: #8ADFFF;
+$noChangeColor: $white;
+$currentPriceBackcolor: #6b7945;
+
+$baseFontColor: #c4d7e3;
+$subFontColor: $thingray;
+$accentFontColor: #000000;
+
+$disabledFontColor: #cdcccc;
+
+$panelhoverColor: #444444;
+
+$btnStateBaseColor: #495D76;
+
+
+$paleblue: #08b5cc;
+$green: #32b77d;
+
+$tickerBorderColor: #7e858c;
+$menuTabBorderColor: $silver;
+$menuTabIconColor: #949ca6;
+$notificationPanelColor: #f4f8fa;
+$notificationPanelTextColor: #f00;
+
+$actionpage-background-bg-color: $trueblack !default;
+$actionpage-contents-bg-color: $darkgrey !default;
+
+$blink-fg-color: $black;
+$blink-bg-color: #eaed34;
+$blink-plus-bg-color: lighten($plusColor, 5%) !default;
+$blink-minus-bg-color: lighten($minusColor, 10%) !default;
+
+$input-focus-color: $btnStateBaseColor;
+$input-disabled-color: #4c4c4c;
+$radio-empty-color: #8e8e8e;
+
+$collection-bg-color: $black;
+
+$datagrid-hover-color: #444;
+$datagrid-border-color: #626262 !default;
+$datagrid-background-color: #fff !default;
+$datagrid-background-fixed-color: #eee !default;
+$datagrid-contextmenu-background-color: #000 !default;
+$datagrid-contextmenu-border-color: #fff !default;
+$datagrid-row-active-color: #ebb !default;
+$datagrid-row-active-fixed-color: #ebb !default;
+$datagrid-row-even-color: #fff !default;
+$datagrid-row-odd-color: #ddd !default;
+$datagrid-pager-color: #ddd !default;
+$datagrid-pager-active-color: #000 !default;
+$datagrid-body-row-color: #222;
+$datagrid-body-row-odd-color: #363636;
+$datagrid-body-row-select-color: lighten($datagrid-hover-color, 20%) !default;
+$detailpanel-background-color: #222222;
+$button-color-flat: $lightgrey;$button-color-flat: $lightgrey;
+$datagrid-header-color: lighten(#222, 15%);
+
+$scrollber: #a9b9b9;
+$scrollberColor: #86caca;
+
+$orderformUpperColor: #434343;
+$notcheckedColor: #686868;
+$securitykeyboardColor: #000;
+
+$tabs-link-color: #bbb;
+$tabs-sp-active-color: lighten(#222, 15%);
+$tabs-sp-link-color: lighten($tabs-sp-active-color, 10%);
+
+$board-volume-bar: #6b7945;

@@ -1,0 +1,28 @@
+<menu data-bind="attr: { theme: application.theme }" style="padding: 0; margin-top: 0;"></menu>
+<div class="Body">
+	<div style="width: calc(100% - 30px)">
+		<div class="col" data-bind="view: 'mainContent',css: leftClass, style: { height: wHeight }"
+			 style="overflow: auto; border-right: 1px solid #aaa; transition: width 0.2s"></div>
+		<div class="col" data-bind=" css: rightClass, visible: application.showcomplex, style: { height: wHeight }"
+			 style="overflow: auto; transition: width 0.2s">
+			<sidenav notifygroup="sidenav"></sidenav>
+		</div>
+	</div>
+	<div class="sideToolbar"
+		 style="position: fixed; right: 0; height: calc(100% - 97px); width: 30px; background: white; border-left: 1px solid #aaa;">
+		<div style="height: 90%; display: table;">
+			<a href="#" style="display: table-cell; vertical-align: middle;" data-bind="click: showClick()">
+				<!-- ko ifnot: application.showcomplex -->
+				<i class="small material-icons">navigate_before</i>
+				<!-- /ko -->
+				<!-- ko if: application.showcomplex -->
+				<i class="small material-icons">navigate_next</i>
+				<!-- /ko -->
+			</a>
+		</div>
+		<div data-bind="if: application.showcomplex">
+			<a href="#"><i class="small material-icons" data-bind="click: changeClick(true)">add</i></a>
+			<a href="#"><i class="small material-icons" data-bind="click: changeClick(false)">remove</i></a>
+		</div>
+	</div>
+</div>

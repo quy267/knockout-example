@@ -1,0 +1,121 @@
+.chartcanvas {
+  min-height: 200px;
+  .device-sp & {
+    min-height: 110px;
+  }
+  .device-sp.ipad & {
+    min-height: 90px;
+  }
+  .miniTick & {
+    max-height: 110px !important;
+  }
+  table {
+    width: auto;
+  }
+}
+[name="chartcanvas"] {
+  table {
+    width: auto;
+  }
+}
+.quote-block {
+  .chartcanvas {
+    height: 100px;
+    min-height: 100px;
+    max-height: $chartcanvas-max-height;
+  }
+}
+
+.inlinechart {
+  height: 200px;
+  max-height: 200px;
+  min-height: 200px;
+  .stockchart & {
+    min-height: 300px;
+    max-height: inherit;
+  }
+}
+
+#chartsettings_oscilators_header,#chartsetting_technicals_header,#chartsetting_generals_header{
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.chart-setting{
+  border:1px solid $borderColor;
+  margin:10px 0;
+  .small{
+    margin-bottom: 5px;
+  }
+
+  .device-sp & {
+    @media only screen and (min-width: 420px){
+      input.browser-default[type=text] {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .chart-setting-header{
+    background: $bgColor;
+    padding: 10px;
+  }
+  .section-border{
+    padding: 10px 0;
+  }
+}
+
+#settingarea .ContentBody{
+  .device-pc & {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.chart-menu-tab{
+	position: relative;
+	.displaymode-area{
+		position: absolute;
+		left: 0px;
+		.btn {
+			padding: 0;
+		}
+	}
+	.tab-area{
+		padding-left: 2rem !important;
+	}
+}
+
+.chart-blockpanel{
+	overflow-x: hidden; 
+	overflow-y: auto; 
+	padding-right: 10px;
+}
+
+.fullscreencontainer{
+	position: fixed !important; 
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 100% !important;
+	z-index:1000;
+}
+
+.chartdisplaycontainer {
+  .btn {
+    &.btn-size-s i {
+      margin: 0;
+      width: 1.5rem;
+    }
+  }
+  span.font-small {
+    font-size: 0.8rem;
+  }
+  .orderinput-width.browser-default {
+    width: 3rem !important;
+  }
+  .fullscreen-height {
+    height: 2rem;
+  }
+}

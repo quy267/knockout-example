@@ -1,0 +1,49 @@
+
+.board-btn-area {
+	position: absolute;
+	right: 0.5rem;
+	top: 0.5rem;
+	select {
+		width: 150px;
+		padding: 0;
+		&.select-size-m{
+			height: 2rem !important;
+		}
+	}
+  	.btn{
+	  height: 2rem !important;
+	  line-height: 2rem !important;
+	}
+	.material-icons {
+	  height: 2em;
+	}
+  .btn-board{
+	height: 1.5rem;
+	line-height: 1.5rem;
+  }
+}
+
+.detail-brand-val {
+	font-size: $fontS;
+  	padding: 0px 5px;
+	.currentprice {
+		font-size: $fontPriceChange;
+		font-weight: bold;
+		line-height: normal;
+	}
+	.pricechange {
+		font-size: $fontXL;
+	}
+}
+.stockboard-board{
+  th.center-align{
+	padding-right: 0 !important;
+	padding-left: 0 !important;
+  }
+  .collection{
+	width: 20rem;
+  }
+}
+
+.position-brand-name{
+}

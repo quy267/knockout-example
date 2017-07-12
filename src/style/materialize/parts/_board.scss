@@ -1,0 +1,89 @@
+.board {
+  font-size: $fontS;
+  font-weight: bold;
+  line-height: 1;
+  @include break-points-s {
+    line-height: 1.2;
+  }
+  .currentprice {
+    background: $currentPriceBackcolor !important;
+  }
+  th, td {
+    padding: 0;
+    padding: $tableMinPadding !important;
+    border-radius: 0;
+  }
+  th.cendter-border {
+    padding-top: 5px;
+  }
+  th.cendter-border,
+  td.center-align {
+    border-right: 1px solid $gray;
+    border-left: 1px solid $gray;
+  }
+  th.right-border,
+  td.right-border {
+    border-right: 1px solid $gray;
+  }
+
+  tr:nth-child(even) {
+    td.center-align {
+      @if $type == white {
+        background: $silver;
+      } @else {
+        background: darken($darkgrey, 20%);
+      }
+    }
+    td.board-minus {
+      @if $type == white {
+        background: lighten($minusColor, 44%);
+      } @else {
+        background: darken($darkgrey, 20%);
+      }
+    }
+    td.board-plus {
+      @if $type == white {
+        background: lighten($plusColor, 45%);
+      } @else {
+        background: darken($darkgrey, 20%);
+      }
+    }
+    td.board-volume {
+      @if $type == white {
+        background: $currentPriceBackcolor;
+      } @else {
+        background: darken($darkgrey, 20%);
+      }
+    }
+  }
+  td.board-volume {
+    text-align: right;
+    .volume-bar {
+      background: $board-volume-bar;
+      float: right;
+      position: relative;
+    }
+    padding: 2px 0px !important;
+    .volume-value {
+      overflow: visible;
+      float: right;
+    }
+  }
+  .device-sp & {
+    border: 1px solid $gray;
+    font-size: $fontL;
+  }
+  .device-sp.landscapeDividedDetail & {
+    line-height: 1.5;
+  }
+
+}
+
+.stockboard-listboard {
+  .board {
+    font-size: $fontText;
+    th, td {
+      padding: 1px 5px !important;
+    }
+  }
+}

@@ -1,0 +1,313 @@
+.datagrid-row {
+	border-top: 0px solid $datagrid-border-color;
+	@if $type == white {
+	  border-right: 0px solid $datagrid-border-color;
+	} @else {
+	  border-right: 0px solid lighten($black, 5%);
+	}
+	min-width: inherit;
+	min-height: calc(1rem + #{$datagrid-row-min-height});	// 1文字分の高さ＋上下パディング＋下部ボーダー
+	&:last-child {
+		border-bottom: 1px solid $datagrid-border-color;
+	}
+}
+.datagrid-col {
+	position: absolute;
+    display: inline-block;
+	@if $type == white {
+	  border-right: 0px solid $datagrid-border-color;
+	} @else {
+	  border-right: 0px solid lighten($black, 5%);
+	}
+	top: 0px;
+	bottom: 0px;
+    & > div {
+		padding: 5px 5px;
+    	overflow: hidden;
+		text-overflow: ellipsis;
+    	white-space: nowrap;
+	  .device-sp & {
+		padding: 4px 5px;
+	  }
+    }
+	&.datagrid-fixed {
+		z-index: 2;
+		position: absolute;
+	}
+	&.datagrid-checkbox {
+		padding: 2px;
+		width: 1.7rem;
+	}
+	&:first-child {
+		border-left: 0px solid $datagrid-border-color;
+	}
+	&.dummy {
+		position: relative;
+		width: 0;
+		left: -100000px;
+	}
+}
+.datagrid-flex {
+	@include ValueSetPrefix(display, flex);
+	@include PropertySetPrefix(flex-direction, row);
+	@include PropertySetPrefix(flex-wrap, nowrap);
+	@include PropertySetPrefix(align-items, stretch);
+	& > div {
+		@include PropertySetPrefix(flex-grow, 1);
+		@include PropertySetPrefix(flex-shrink, 1);
+		position: static !important;
+		min-width: 1rem;
+	}
+}
+.datagrid-hide {
+	display: none;
+}
+
+.datagrid {
+	position: relative;
+	&, * {
+		box-sizing: border-box;
+	}
+	.datagrid-table {
+		overflow: hidden;
+	  	&.device-sp {
+		  overflow-y: hidden;
+		}
+		white-space: nowrap;
+		width:100%;
+	  	//line-height:1;
+		-webkit-overflow-scrolling: touch;
+	  	.order & {
+			-webkit-overflow-scrolling: auto;
+	  	}
+		.datagrid-header {
+			position: relative;
+			border-bottom: 1px solid $datagrid-border-color;
+			background: $datagrid-header-color;
+			color: $white;
+			@extend .datagrid-row;
+			.datagrid-header-col {
+				background: $datagrid-header-color;
+				text-align: center;
+				@if $type == white {
+				  border-right: 1px solid $datagrid-border-color;
+				} @else {
+				  border-right: 1px solid $datagrid-border-color;
+				}
+				@extend .datagrid-col;
+				&[draggable="true"] {
+					cursor: move;
+					-khtml-user-drag: element;
+				}
+				&.drag {
+					opacity: .4;
+				}
+				&.over {
+					border: 1px dashed $datagrid-border-color;
+				}
+				.colname {
+					text-overflow: ellipsis;
+				    overflow: hidden;
+				    white-space: nowrap;
+				}
+				.showsort {
+					margin-right: 15px;
+				}
+				.sort {
+					padding: 0;
+					cursor: pointer;
+					position: absolute;
+					width: 15px;
+					top: 5px;
+					right: 10px;
+					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAYElEQVQoU62SyxIAEAhF2fT/39smj5kMpgfRVufgVk4PlR2W6rnaY8GEiAkAml/s0+AOcmkCCV5AS7DDIqgJZriFc1qd89I2ZV9vDv+ZnxhOWxTczHkRRDZsCKK77c68AHHaJBB0mQwGAAAAAElFTkSuQmCC) no-repeat;
+					&.asc {
+						background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAcklEQVQoU62SwQ2AMAhF6YUZnM7hnM4ZuKDUmJSGD0blSt+D/rbRh2oFq2cfnslgpW0nWhfzh+cQfIF3AUEEezARzHAMAsEIWzhPq3NV2qns18kqInAaM7ttw7QjwQxmd3YbRGAVWBcgsIKt//pvl29+AL41IBBwZFEIAAAAAElFTkSuQmCC) no-repeat;
+					}
+					&.desc {
+						background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAcUlEQVQoU62SwQ2AMAhF6YUZnM7hnM4ZuKDUmJTmA0blSt+D/rbRh2oFq2c/PJPBKiLEzOaH5yK4g3dFAgQ7MBPMMAQjwQhbOE+rc1XaqezXyUrbHk9bF7ctTBsKJjC7s98AgFVglyAAK9j6r/92+eYHap4gEHIxmZwAAAAASUVORK5CYII=) no-repeat;
+					}
+				}
+				.separator {
+					padding: 0;
+					cursor: col-resize;
+					position: absolute;
+					width: 5px;
+					top: 0px;
+					bottom: 0px;
+					right: 0px;
+				}
+				&:last-child {
+				  .device-sp & {
+					& > div {
+						padding-right: 1rem;	/* ヘッダの最後の項目はright-arrowの分だけマージンをとる */
+					}
+				  }
+				}
+			}
+		}
+		.datagrid-body-wrapper {
+			position: relative;
+		    overflow: auto;
+		  &.datagrid-newslist{
+			height: 20rem;
+			overflow-y: overlay;
+		  }
+		}
+		.datagrid-body {
+			position: relative;
+			overflow-y: hidden;
+			overflow-x: hidden;
+			.datagrid-body-row {
+			  background: $datagrid-body-row-color;
+				@extend .datagrid-row;
+				cursor: pointer;
+				position: relative;
+				&.active {
+					/*background-color: $datagrid-row-active-color;
+					div {
+						&.datagrid-fixed {
+							background-color: $datagrid-row-active-fixed-color;
+						}
+					}*/
+				}
+				&.even {
+					.datagrid-body-col {
+						background-color: $datagrid-body-row-color;
+					}
+				}
+				&.odd {
+					.datagrid-body-col {
+						background-color: $datagrid-body-row-odd-color;
+					}
+			        background-color: $datagrid-body-row-odd-color;
+        		}
+				&:hover {
+					.datagrid-body-col {
+						background-color: $datagrid-hover-color !important;
+					}
+				}
+				&.select {
+					.datagrid-body-col {
+						background-color: $datagrid-body-row-select-color !important;
+					}
+					background-color: $datagrid-body-row-select-color !important;
+				}
+				.datagrid-body-col {
+					@extend .datagrid-col;
+				}
+			}
+			.datagrid-inline-view-row {
+				@extend .datagrid-row;
+				border-left: 0px solid $datagrid-border-color;
+				position: relative;
+			}
+			.datagrid-body-row-wrapper {
+				position: relative;
+				
+				.datagrid-body-row-container {
+					&.virtualrow {
+						position: absolute;
+					}
+				}
+			}
+		}
+		.datagrid-dummy-row {
+			visibility: hidden;
+			height: 0;
+		}
+		.right-arrow {
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 0px;
+			border-left: 1px solid $datagrid-border-color;
+			border-bottom: 1px solid $datagrid-border-color;
+			@include ValueSetPrefix(display, flex);
+			@include PropertySetPrefix(align-items, center);
+			@include PropertySetPrefix(justify-content, center);
+			background: $subColor;
+			& > div {
+				min-width: 1rem;
+				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAW0lEQVQoU7WTMQ7AMAjEkoX/v5clKXO5M1JVRoQtQS57fajdsOfpdf3XqIJrEAUtnJkrIlAg4SJJYGESIOwEI1gJRrDaHWF3tH+uTc+kQlDxxIA4GKM5srtPdwEGpigQdcVK9AAAAABJRU5ErkJggg==) no-repeat;
+			}
+		}
+		input[type="checkbox"] {
+			margin: 1.5px;
+		}
+	}
+	.datagrid-footer {
+		.datagrid-pager {
+			a {
+				text-decoration: none;
+				color: $datagrid-pager-color;
+				cursor: pointer;
+				&.active {
+					color: $datagrid-pager-active-color;
+				}
+				&.disabled {
+					cursor: default;
+				}
+				&.page {
+					color: $datagrid-pager-active-color;
+					&.active {
+						font-weight: bold;
+						color: $subFontColor;
+					}
+				}
+			}
+			.pageno {
+				display: none;
+			}
+		}
+	}
+	.datagrid-contextmenu {
+		position: absolute;
+		padding: 5px;
+		background-color: $datagrid-contextmenu-background-color;
+		border: 1px solid $datagrid-contextmenu-border-color;
+		z-index: 20;
+		&.off {
+			display: none;
+			top: -100000px;
+			left: -100000px;
+		}
+		&.on {
+			display: block;
+			overflow-y: auto;
+			max-height: 50vh;
+			width: 13rem;
+		}
+	  .datagrid-contextmenu-row{
+		padding: 2px 0;
+		&:hover {
+		  background: $datagrid-hover-color;
+		}
+	  }
+	}
+	.datagrid-body-contextmenu {
+		@extend .datagrid-contextmenu;
+		@if $type == white {
+		  background: $white;
+		} @else {
+		  background: $black;
+		}
+	}
+}
+
+.datagrid-spacing {
+  margin-top: 10px;
+}
+.position-area {
+  .data-table {
+	@if $type == white {
+	  border: 1px solid $darkgrey;
+	} @else {
+	  border: 1px solid $silver;
+	}
+	.th{
+	  min-width: 8rem;
+	  width: 8rem;
+	}
+  }
+}

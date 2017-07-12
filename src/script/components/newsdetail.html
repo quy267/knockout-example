@@ -1,0 +1,37 @@
+<!-- ko if: position() == 'sideNav' && article() -->
+	<div style="padding: 10px;">
+		<div class="row">
+			<div class="col s12 m12 l12">
+				<h5 class="amber accent-3">Current Viewing Article</h5>
+				<h5 data-bind="text: article().title"></h5>
+				<p data-bind="text: article().description"></p>
+				<hr/>
+				<a class="modal-action waves-effect waves-red btn-flat"
+				   data-bind="click: function(){ switchArticle('back') }, css: { disabled: backDisabled() }"><i
+						class="material-icons">navigate_before</i></a>
+				<a class="modal-action waves-effect waves-red btn-flat"
+				   data-bind="click: function(){ switchArticle('next') }, css: { disabled: nextDisabled() }"><i
+						class="material-icons">navigate_next</i></a>
+			</div>
+		</div>
+	</div>
+<!-- /ko -->
+<!-- ko if: position() != 'sideNav' -->
+	<div class="row">
+		<div class="col s12 m12 l12">
+			<!-- ko if: article() -->
+			<h4 data-bind="text: article().title"></h4>
+			<p data-bind="text: article().description"></p>
+			<!-- /ko -->
+			<hr/>
+			<a class="modal-action waves-effect waves-red btn-flat"
+			   data-bind="click: function(){ switchArticle('back') }, css: { disabled: backDisabled() }"><i
+					class="material-icons">navigate_before</i></a>
+			<a class="modal-action waves-effect waves-red btn-flat"
+			   data-bind="click: function(){ switchArticle('next') }, css: { disabled: nextDisabled() }"><i
+					class="material-icons">navigate_next</i></a>
+			<a href="javascript:void(0)" data-bind="click: function(){ application.closeActionPage() }"
+			   class="modal-action modal-close waves-effect waves-green btn-flat right">Close</a>
+		</div>
+	</div>
+<!-- /ko -->

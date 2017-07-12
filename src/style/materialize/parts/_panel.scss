@@ -1,0 +1,47 @@
+.block-panel {
+	border: 1px solid $lightgrey;
+	@if $type == white {
+	  background: $white;
+	} @else {
+	  background: $trueblack;
+	}
+	padding: 0 10px 10px;
+	border-radius: $baseBorderRadius *2;
+	box-shadow: $panelBoxShadow;
+	border: 1px solid #d8e2e7;
+	margin-bottom: $baseMargin;
+	position: relative;
+	.row {
+		margin-bottom: 0;
+	}
+	&.no-headding {
+		padding: 5px;
+	}
+	&.stockboard-listboard {
+		padding: 3px 5px;
+		border: 2px solid $lightgrey;
+		margin-bottom: 3px;
+	}
+	&.chartpage-stockboard{
+		margin-bottom: 0px; 
+		padding-bottom: 0px;
+	}
+	.btn-panel-headding {
+	  position: absolute;
+	  top: 1px;
+	  right: 2px;
+	  line-height: 1.4;
+	  height: 20px;
+	}
+}
+
+.notification-panel {
+	background: $notificationPanelColor;
+	border-left: 5px solid $paleblue;
+	padding: 15px;
+	box-shadow: $panelBoxShadow;
+	border-radius: $baseBorderRadius;
+	font-size: $fontL;
+	font-weight: bold;
+	color: $notificationPanelTextColor;
+}

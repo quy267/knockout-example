@@ -1,0 +1,8 @@
+<div class="row">
+    <!-- Modal Structure -->
+    <div id="color-table" data-bind="foreach: colorList" class="color-table container" style="margin-top: 40px">
+        <div class="item" style="width: 6.25%; float: left; padding: 0.05em;">
+            <div style="height: 30px" data-bind="style:{background: hex}, click: $parent.setColor.bind($data,name)"></div>
+        </div>
+    </div>
+</div>

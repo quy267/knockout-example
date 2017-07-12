@@ -1,0 +1,10 @@
+<div class="col s12">
+	<ul class="tabs">
+		<li class="tab col s4"><a data-bind="css: {active: tabActive() === 'markettop'}" href="#markettop">Market Top</a></li>
+		<li class="tab col s4"><a data-bind="css: {active: tabActive() === 'news'}" href="#news">News</a></li>
+		<li class="tab col s4"><a data-bind="css: {active: tabActive() === 'list'}" href="#list">History</a></li>
+	</ul>
+</div>
+<markettopdetail id="markettop" class="col s12" notifygroup="market"></markettopdetail>
+<newsdetail id="news" class="col s12" data-bind="attr: { position: 'sideNav' }" notifygroup="newsdetail"></newsdetail>
+<history id="list" class="col s12" data-bind="attr: {dateIndex: dateIndex}" notifygroup="history"></history>

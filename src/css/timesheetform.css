@@ -1,0 +1,11 @@
+/* Style for time sheet form */
+.timesheet-date-type-switch {
+	position: absolute;
+	right: -10px;
+	top: 5px;
+}
+
+.relative {
+	position: relative;
+}
+

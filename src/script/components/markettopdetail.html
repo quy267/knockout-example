@@ -1,0 +1,18 @@
+<!--ko if: marketdetail()-->
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+	<p class="col s12" data-bind="text: 'Symbol: ' + marketdetail().symbol"></p>
+
+	<p class="col s8" data-bind="text: 'Volume: ' + marketdetail().volume"></p>
+	<p class="col s8" data-bind="text: 'LastSalePrice: ' + marketdetail().lastSalePrice"></p>
+	<p class="col s8" data-bind="text: 'LastSaleTime: ' + marketdetail().lastSaleTime"></p>
+	<p class="col s8" data-bind="text: 'LastUpdated: ' + marketdetail().lastUpdated"></p>
+	<p class="clearfix"></p>
+</div>
+<br>
+<br>
+<pre data-bind="text: ko.toJSON(marketdetail(), null, 2)"></pre>
+<!--/ko-->

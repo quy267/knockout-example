@@ -1,0 +1,39 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper" data-bind="css: theme">
+            <ul class="brand-logo">
+                <li>
+                    <a href="#"><i class="material-icons" data-bind="click: function() { ko_router.transitionTo('login')}">fingerprint</i></a>
+                </li>
+                <li>
+                    <!-- Modal Trigger -->
+                    <a data-bind="click: function() { application.showActionPage('color')}"><i class="material-icons">view_comfy</i></a>
+                </li>
+                <!-- ko if: application.showNewsNav() -->
+                <li>
+                    <a href="javascript:void(0)" data-bind="click: function(){ $('.news-source-toggle').trigger('click'); }"><i class="material-icons">menu</i></a>
+                </li>
+                <!-- /ko -->
+            </ul>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down" data-bind="foreach: links">
+                <!-- ko if: application.isloggedin -->
+                    <!-- ko if: !flagUrl -->
+                    <li><a data-bind="text: linkText, click: $parent.actionClick.bind($data, actionLink)"></a></li>
+                    <!-- /ko -->
+                <!-- /ko -->
+            </ul>
+            <!-- ko if: application.isloggedin -->
+            <markettopsearch></markettopsearch>
+            <!-- /ko -->
+
+            <ul id="news-side-nav" class="side-nav">
+                <li><a class="subheader"><i class="material-icons" style="display: inline-block;">subtitles</i> New Sources</a></li>
+                <li><div class="divider"></div></li>
+                <newssource notifygroup="newssource"></newssource>
+            </ul>
+            <a href="javascript:void(0)" data-activates="news-side-nav" class="news-source-toggle hide"></a>
+        </div>
+    </nav>
+</div>

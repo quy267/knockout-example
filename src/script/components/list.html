@@ -1,0 +1,25 @@
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col s4">
+			Month:
+			<div class="input-field inline">
+				<input type="date" data-bind="value: month" class="datepicker"/>
+			</div>
+		</div>
+	</div>
+	<div class="table">
+		<div class="table-row table-header row ">
+			<div class="table-col col s1">Date</div>
+			<div class="table-col col s1">Type</div>
+			<div class="table-col col s1">Start time</div>
+			<div class="table-col col s1">End time</div>
+			<div class="table-col col s1">Time spent</div>
+			<div class="table-col col s1">Over time</div>
+			<div class="table-col col s6">Note</div>
+		</div>
+		<!-- ko foreach: days-->
+		<table-row params="value: $data"></table-row>
+		<!-- /ko -->
+	</div>

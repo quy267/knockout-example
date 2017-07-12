@@ -1,0 +1,83 @@
+/*** Fonts ***/
+$roboto-font-path: "../fonts/roboto/" !default;
+$icons-font-path: "../fonts/material-design-icons/" !default;
+
+
+//====================================================
+//  _font.scss
+//====================================================
+$baseFontFamily: 'Roboto',メイリオ, Meiryo,  'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', 'MS PGothic', Helvetica, Arial, sans-serif;
+
+
+
+$iconS: 24px;
+$fontText: 13px;
+$fontspM: 13px;
+
+
+//====================================================
+//  _whitespace.scss
+//====================================================
+
+$baseMargin: 5px;
+$basePdding: 10px;
+$tablePadding: 5px;
+
+$tableMinPadding: 2px 5px;
+
+
+//====================================================
+//  _borders.scss
+//====================================================
+
+$borderColor: $gray;
+$baseBorderRadius: 2px;
+$gutter-width: 1rem;
+
+$panelBoxShadow: 0 1px 10px rgba(0,0,0,0.07);
+
+//====================================================
+//  _breakpoints.scss
+//====================================================
+
+$smallBreak: 601px;
+$mediumBreak: 993px;
+
+
+@mixin break-points-s() {
+	@media screen and (max-width: $smallBreak) {
+		@content;
+	}
+}
+
+@mixin break-points-m() {
+	@media screen and (max-width: $mediumBreak) {
+		@content;
+	}
+}
+
+@mixin break-points-l() {
+	@media screen and (min-width: $mediumBreak) {
+		@content;
+	}
+}
+
+//====================================================
+//  _parts.scss
+//====================================================
+
+//header-height
+$headerPcHeight: 75px;
+$headerPcHeightWithoutTicker: 30px;
+$headerTabHeight: 5rem;
+
+$toggleComplexWidth: 16px;
+$mediumBreakComplexHeight: 40vh;
+
+$button-floating-size: 30px;
+$sidenav-item-height: 35px;
+
+$complex-width: 30rem;
+
+$complex-height-for-tablet: 30rem;
+$order-form-height-for-tablet: 21rem;

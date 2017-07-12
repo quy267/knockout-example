@@ -1,0 +1,51 @@
+<div>
+	<input type="text"
+		   data-bind="textInput: keyword, event: {focus: function(){ focusinput() }, blur: function(){ outfocusinput()}, keyup: enterfilter }"
+		   placeholder="Enter the keywords..." style="margin-bottom: 0"/>
+	<div class="clearfix"></div>
+	<div style="position: relative;">
+		<!-- ko if: !selected() && autocomplete().length -->
+		<ul class="collection" style="position: absolute; left: 0; top: 0; width: 200px;">
+			<!-- ko foreach: autocomplete()-->
+			<li class="collection-item"
+				data-bind="text: $data.symbol,
+				css: {'active': $data.symbol === $parent.selectedrow().symbol},
+				click: function(){$parent.selectkeyword($data.symbol)}"></li>
+			<!-- /ko -->
+		</ul>
+		<!-- /ko -->
+	</div>
+</div>
+
+<div class="table">
+	<div class="table-row table-header row green accent-2" style="padding-top: 15px; padding-bottom: 15px; margin: 0;">
+		<div class="table-col col s4">Symbol</div>
+		<div class="table-col col s4">Last Sale Price</div>
+		<div class="table-col col s4">Last Sale Size</div>
+	</div>
+	<!-- ko foreach: paginated() -->
+	<markettoprow params="data: $data"></markettoprow>
+	<!-- /ko -->
+</div>
+<div class="center-align">
+	<br>
+	<br>
+	<ul class="pagination">
+		<li class=""
+			data-bind="css: {'disabled': !hasPrevious(), 'waves-effect': hasPrevious()}, click: function(){previous()}">
+			<a href="javascript:void(0)"><i class="material-icons">chevron_left</i></a>
+		</li>
+		<!-- ko foreach: pages() -->
+		<li class=""
+			data-bind="click: function(){$parent.jumpto($data)}, css: {'active': $parent.active($data), 'waves-effect': $data !== '.'}">
+			<a href="javascript:void(0)" data-bind="text: $data"></a>
+		</li>
+		<!-- /ko -->
+		<li class=""
+			data-bind="css: {'disabled': !hasNext(), 'waves-effect': hasNext()}, click: function(){next()}">
+			<a href="javascript:void(0)"><i class="material-icons">chevron_right</i></a>
+		</li>
+	</ul>
+</div>
+
+

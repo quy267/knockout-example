@@ -1,0 +1,76 @@
+.headding-l {
+	color: $subFontColor;
+	font-size: $fontXL;
+	.device-sp & {
+		margin: 0 0 5px 5px;
+    font-size: $fontM;
+    font-weight: bold;
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 7px;
+			height: 7px;
+			margin-right: 5px;
+			background: $accentColor;
+		}
+	}
+}
+
+.headding-m {
+	color: $subFontColor;
+	font-size: $fontL;
+}
+
+.headding-s {
+	color: $subFontColor;
+	font-size: $fontM;
+	font-weight: bold;
+}
+
+.headding-modal {
+	font-size: $fontXL;
+	color: $subFontColor;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.headding-panel {
+	font-size: $fontM;
+	font-weight: bold;
+	@if $type == white {
+	  color: $darkgrey;
+	} @else {
+	  color: $lightgrey;
+	}
+	border-bottom: 1px solid $silver;
+	padding: 5px 14px 3px;
+	margin: 0 -10px 4px;
+}
+
+.headding-stock-name {
+	@extend .headding-l;
+}
+
+.headding-sp {
+	font-size: $fontM;
+	padding: 6px 5px;
+	color: $white;
+	background: $midgrey;
+	@if $type == white {
+	  background: $midgrey;
+	} @else {
+	  background: $black;
+	  border-bottom: 1px solid $midgrey;
+	}
+	overflow: hidden;
+}
+
+.headding-brand {
+	color: $subFontColor;
+	font-size: $fontL;
+	font-weight: bold;
+	margin-top: 5px;
+  	.brand-name {
+	  font-size: $fontXL;
+	}
+}

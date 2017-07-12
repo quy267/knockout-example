@@ -1,0 +1,23 @@
+<div class="table">
+	<div class="table-row table-header row green accent-2" style="padding-top: 15px; padding-bottom: 15px">
+		<div class="table-col col s3" data-bind="text: today()"></div>
+		<div class="table-col col s2">Tape A</div>
+		<div class="table-col col s2">Tape B</div>
+		<div class="table-col col s2">Tape C</div>
+		<div class="table-col col s2">Total</div>
+		<div class="table-col col s1">Mkt %</div>
+	</div>
+	<!-- ko foreach: marketData-->
+	<market-row params="data: $data" data-bind="click: function() {$parent.modalopen($index()); application.showActionPage('market-detail', {marketindex: $parent.marketindex()}) }"></market-row>
+	<!--<market-row params="data: $data" data-bind="click: $parent.modalopen($index())"></market-row>-->
+	<!-- /ko -->
+	<div class="table-row row valign-wrapper green accent-2" style="padding-top: 15px; padding-bottom: 15px">
+		<div class="table-col col s3">TOTAL</div>
+		<div class="table-col col s2" data-bind="numberFormat: total().totalTapeA"></div>
+		<div class="table-col col s2" data-bind="numberFormat: total().totalTapeB"></div>
+		<div class="table-col col s2" data-bind="numberFormat: total().totalTapeC"></div>
+		<div class="table-col col s2" data-bind="numberFormat: total().totalTape"></div>
+		<div class="table-col col s1" data-bind="text: total().totalPercent + '%'"></div>
+	</div>
+</div>
+

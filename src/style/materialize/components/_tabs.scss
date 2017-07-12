@@ -1,0 +1,158 @@
+.tabs {
+  $tabsHeight: 48px;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: $tabsHeight;
+  background-color: $tabs-bg-color;
+  margin: 0 auto;
+  width: 100%;
+  white-space: nowrap;
+  box-shadow: 0px 1px 5px 0px rgba(210, 214, 217, 0.8);
+  &.tabs-child.analysisnavi-tabs{
+    height:$tabs-height;
+    .tab {
+      height: inherit !important;
+      a {
+        height: $tabs-height;
+        line-height: $tabs-line-height;
+      }
+    }
+  }
+
+  .device-sp & {
+    border-bottom: 2px solid $tabs-sp-active-color;
+    box-shadow: 0px 1px 1px 0px rgba(210, 214, 217, 0.8);
+  }
+  &.scrollable li {
+      min-width: 50px;
+      height: $tabsHeight - 20px;
+  }
+  &.smaller{
+    height: $tabsHeight - 20px !important;
+     a {
+          line-height: $tabsHeight - 20px;
+          font-size: 0.8rem !important;
+        }
+  }
+li.tab.col{
+  max-width: 10rem;
+}
+  .tab {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: $tabsHeight;
+    height: $tabsHeight;
+     
+    .device-sp & {
+      //line-height: 36px;
+      //height: 36px;
+    }
+    padding: 0;
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: .8px;
+    width: 15%;
+    min-width: 40px;
+    .device-sp & {
+      margin-top: 5px;
+    }
+
+    a {
+      color: $tabs-link-color;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      transition: color .28s ease;
+      cursor: pointer;
+      position: relative;
+      &.indexdetail {
+        font-size: $fontL !important;
+      }
+      &:hover {
+        color: $accentColor;
+      }
+      &.active {
+          color: $accentColor;
+          border-bottom: 3px solid $accentColor;
+        .device-sp & {
+          color: $white;
+          background: $tabs-sp-active-color;
+        }
+      }
+      .device-sp & {
+        font-size: $fontLL;
+        border-right: 2px solid $detailpanel-background-color;
+        border-radius: 5px 5px 0 0;
+        background: $tabs-sp-link-color;
+      }
+    }
+
+    &.disabled a {
+      color: $disabledFontColor;
+      cursor: default;
+    }
+  }
+  .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: $tabs-underline-color;
+    will-change: left, right;
+  }
+  &-low {
+    padding-top: 0.8rem;
+    padding-bottom: 1.2rem;
+    .tab {
+      min-width: 120px;
+      .device-sp & {
+        min-width: 140px;
+      }
+      a {
+        padding: 0 10px;
+      }
+    }
+  }
+  &.tabs-child,&-child .tabs {
+    height: $tabs-height;
+    margin-bottom: 5px;
+    padding: 0px 5px;
+    .device-sp & {
+      border-bottom: none;
+      height: 48px;
+    }
+    .tab {
+      height: $tabs-height;
+      line-height: $tabs-line-height;
+      .device-sp & {
+        height: 48px;
+        line-height: 48px;
+        }
+      a {
+        height: $tabs-height;
+        border-radius: $baseBorderRadius * 2;
+        padding: 0 5px;;
+        .device-sp & {
+          height: 48px;
+          }
+        &.active {
+          background: $accentColor;
+          color: $white;
+        }
+      }
+    }
+  }
+}

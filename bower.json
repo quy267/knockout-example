@@ -1,0 +1,31 @@
+{
+  "name": "vis-ts",
+  "description": "",
+  "main": "gruntfile.js",
+  "authors": [
+    "Dang Tuan Thanh <thanh.dang@vietis.com.vn>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "Materialize": "https://github.com/Dogfalo/materialize.git#0.97.5",
+    "crypto-js": "https://github.com/brix/crypto-js.git#3.1.5",
+    "google-fastbutton": "https://github.com/alexblack/google-fastbutton.git#41efd764ee",
+    "knockout": "^3.4.2",
+    "material-design-icons": "^3.0.1",
+    "materialize-clockpicker": "^0.1.1",
+    "knockout-router": "https://gkn00001:1qaz2wsx@gitlab.rich-security.jp/sandbox/knockout-router.git#master"
+  },
+  "resolutions": {
+    "Materialize": "0.97.5",
+    "knockout": "3.3.0"
+  }
+}

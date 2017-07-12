@@ -1,0 +1,252 @@
+.device-pc .BodyArea {
+  @extend .row;
+  .wide {
+	@extend .l12;
+	@extend .m12;
+	@extend .s12;
+  }
+  .narrow {
+	@include break-points-l {
+	  @for $i from 1 through 10 {
+		$width: 2*($i - 1) + $complex-width;
+		&.wnarrow-#{$i} {
+		  width: calc(100% - #{$width}) !important;
+        }
+      }
+	}
+	@include break-points-m {
+	  @extend .l12;
+	  @extend .m12;
+	}
+  }
+  @include break-points-m {
+    .ContentsArea {
+	  margin-bottom: 2rem;
+      &.maxwidth {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.device-pc.complex-show .BodyArea {
+  @include break-points-m {
+	.ContentsArea {
+	  margin-bottom: $complex-height-for-tablet+2rem;
+	}
+  }
+}
+.row .col.ComplexPanelArea {
+  	width: $complex-width;
+  	border-left: 1px solid $gray;
+	padding: 0;
+	position: absolute;
+	@if $type == white {
+	  background: $white;
+	} @else {
+	  background: $black;
+	}
+	.complex-inner {
+		padding: 0 2px;
+		@if $type == white {
+		  background: $white;
+		} @else {
+		  background: $black;
+		}
+	}
+	@include break-points-l {
+		min-height: calc(100vh - #{$headerPcHeight});
+		right: 30px;
+		top: $headerPcHeight;
+		.noTicker & {
+		  top: $headerPcHeightWithoutTicker;
+		}
+		bottom: 0;
+		overflow-y: auto;
+	  	overflow-x: hidden;
+
+		@for $i from 1 through 10 {
+		  $width: 2*($i - 1) + $complex-width;
+		  &.wcomplex-#{$i} {
+		    width: #{$width} !important;
+          }
+        }
+	}
+	@include break-points-m {
+		// height: $mediumBreakComplexHeight;
+		bottom: 0;
+		z-index: 10;
+		width: 100%;
+	    margin-bottom: 30px;
+	 	height: $complex-height-for-tablet;
+		.complex-inner {
+			padding-right: 0;
+			border-top: 1px solid $gray;
+			box-shadow: 0 -3px 5px 0 rgba(0,0,0, 0.2);
+		}
+		.order-form-lower-container {
+		  min-height: $order-form-height-for-tablet;
+		}
+		.ComplexLower {
+		  height: $complex-height-for-tablet;
+		  overflow-y: auto;
+		}
+		.board {
+		  font-size: $fontS + 1;
+		}
+	}
+	.newsdetail {
+	  max-height: 250px;
+	  min-height: 200px;
+	  overflow-y: auto;
+	}
+}
+.row.noTicker .col.ComplexPanelArea {
+  @include break-points-l {
+	top: $headerPcHeightWithoutTicker;
+  }
+}
+
+.togglecomplex {
+  background: $midgrey;
+  position: absolute;
+  top: $headerPcHeight;
+  .noTicker & {
+	top: $headerPcHeightWithoutTicker;
+  }
+  right: 0;
+	cursor: pointer;
+	z-index: 10;
+	min-height: calc(100vh - #{$headerPcHeight});
+	.noTicker & {
+	  min-height: calc(100vh - #{$headerPcHeightWithoutTicker});
+	}
+	@include break-points-m {
+		min-height: 0;
+		width: 100%;
+		display: block;
+		text-align: center;
+		top: auto;
+		.noTicker & {
+		  top: auto;
+		}
+		.noTicker & {
+		  min-height: 0;
+		}
+		bottom: 0;
+		z-index: 11;
+		border-top-right-radius: $baseBorderRadius*3;
+		border-top-left-radius: $baseBorderRadius*3;
+		i.valign {
+			display: inline-block;
+			transform: rotate(90deg);
+			margin: 5px 0 0;
+		}		
+	}
+  i {
+    color: $white;
+  }
+}
+
+.complex-upper-head {
+	margin-bottom: 0;
+	padding: 0.25rem 0;
+	border-left: 0;
+	border-right: 0;
+	overflow: hidden;
+  .device-sp & {
+	padding: 0.25rem 5px;
+  }
+	.row {
+		margin-bottom: 0;
+	}
+	.col {
+		padding: 0 5px;
+	}
+  .block-panel & {
+    border: 0;
+    padding: 0;
+    height: auto;
+  }
+}
+
+.ComplexUpper > .row,
+.complex-inner > .row {
+	margin-bottom: 0 !important;
+}
+
+.complex-size-btn {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.MenuTab-complex{
+  .tabs{
+	.tab{
+	  padding: 0;
+	}
+  }
+}
+
+.ComplexUpper{
+  .smallUpper {
+	height: 2rem;
+	overflow-y: hidden;
+  }
+}
+
+.complex-open {
+  font-size: $fontXL;
+  font-weight: bold;
+  color: $white;
+  background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAL1JREFUeNpiYBiy4P///wJA3ADE5/+jgvNQcQFSDAsA4vdAvB/ERrMkACr+HlkOn2EJxCgGyjtA1SXgU2QA9ZYBFjkFUtTDFIC80oDD1ftx6GnAKgdyAdQLAlgM+4/HQAGoPgVsrliPwzBsYD+SuvWwsGRC0g+y4SKyYUBqPpEJ4yJUP4qBVAHIBj4AYn0Yh5GRcQGQSiTSHH2ofhpGCtWTDU0SNlrWcyAyvyeQXDjAwpWswoEmxdegAgABBgDK53z6okC8cwAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 140px;
+  margin: 5px;
+  padding-top: 2rem;
+  @include break-points-m {
+	background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQZJREFUeNrMVNENgkAM5Yz/MAIj6AbnBLKJjMAGhAkIIzgBbKAjsAEwwfmalKRWDtBA4iVNj9d3vbbXEgT/vswSwTlnoayAGmNM4+MfZhxlkA7bHBIyTDonnOyrQgYxgjxYrC9qwYmWHBKpXHl5SfxgIc3aE3U5FQ0HkPlS7XSaogRuKkVOv/u4DECiw1fO3IxTwhL9yidqCekMqmY8ULxaOb2PPN02g9inkB7SKk7LePpVH6J5M8gF20qZKsLJLrBwyuETcv1x4iyff3NI9Yt9zbwwmvFY/6NIsYex4FE7q5o16lsu4hd0fv9J2WKWzdwYQt1EygO/5lizQr30Pv/DzddLgAEAOV8D2S3XTGIAAAAASUVORK5CYII=');
+	height: 20px;
+	width: 100%;
+	padding-top: 0rem;
+  }
+}
+.complex-close {
+  font-size: $fontXL;
+  font-weight: bold;
+  color: $white;
+  background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNrMVNENgjAQpcQBuoFsQDeQDWQEnEDcQCdQJ9AR3EBG0A3cADeo7+KRXJpr4QMTL3kp8O6u7TvusuzfzaRI773DUgGWP72BzhjziMXksUTAHY+EUlAr+kYcbzZucGz81/aAVXjLXE++Y8lqdnQTNnbsW8ccbMyBg5vEAayWsGXdNK5iGbSkpGc7vC8EtwbO7FRgkcFLXi/gMlT5KjiK2QKncCc/HF2cKGZNIJXXruWVK6as0GLzsDATG2KDa7+0GKlhx11xA8j5EGjYiGRSw4pjf1Pl3/2Hs3dK0Mv9hF5WJTCJsXUEHAv+ZKrkItD42mljbPZ5OLt9BBgAVO9i3F7tn6YAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 140px;
+  margin: 5px;
+  padding-top: 2rem;
+  @include break-points-m {
+	background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPxJREFUeNrMVNsNgzAMTFD/YQRG6AZlBDYoG3SFbACdgFGaTsAKbBB1AmqrRjKp81AFUi1ZRpezY8sXlPp30ynCsiwNhIZBVmttQ/wiUsiAO/jswUuCMfaI43lWy0CswCfyJtQ141SpgkgaMy8fka8SYz48rEOMeSc0YEKjOn9MuoSbEcZ36+h8KVhojm1QlMmHP69K4AXPKIkf5WcpX528gxcfFcIFvPY4VzhD/AndGT+viNw6gFdCwZrwgWGltJTWlwDTJLcv7RHW5m6ZF5WKbbYs6XAKSGqUkoI6POSl7PGWdewZQriRaC1JoyQB46bvTDbH/Q93t7cAAwDwGTcrjql+IwAAAABJRU5ErkJggg==');
+	height: 20px;
+	width: 100%;
+	padding-top: 0rem;
+  }
+}
+.complex-control{
+  display: none;
+  position: absolute;
+  z-index: 998;
+  bottom: 0px;
+  left: 0px;
+
+  ul{
+	margin: 4px;
+  }
+  li{
+	margin-bottom: 5px;
+  .btn-floating{
+	width: 22px;
+  }
+  }
+
+  @include break-points-l {
+	display: block;
+  }
+}

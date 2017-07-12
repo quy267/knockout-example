@@ -1,0 +1,40 @@
+.stockboard-board {
+  .block-panel {
+    height: $stockboard-borard-height;
+    @include break-points-m {
+      height: 28rem;
+    }
+
+
+  }
+}
+.activeboard {
+  border: $accentColor 2px solid !important;
+}
+.stockboard-area {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  .col {
+	padding: 0 0.1rem !important;
+  }
+}
+.pagination-board {
+  background: $midgrey;
+  border: 1px solid $lightgrey;
+  border-radius: $baseBorderRadius *2;
+  cursor: pointer;
+  width: 15px;
+  &.disable {
+    background: $lightgrey !important;
+    border: 1px solid $lightgrey !important;
+	cursor: default;
+  }
+  &:hover {
+    border: 1px solid $accentColor;
+  }
+  a {
+	color: $white;
+  }
+}

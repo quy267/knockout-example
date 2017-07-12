@@ -1,0 +1,23 @@
+<ul class="right">
+	<li>
+		<div>
+			<input type="text" class="text-white"
+				   data-bind="textInput: keyword, event: {focus: function(){ focusinput() }, blur: function(){ outfocusinput()}, keyup: enterfilter }"
+				   placeholder="Search..." style="margin-bottom: 0"/>
+			<div class="clearfix"></div>
+			<div class="black-text" style="position: relative;">
+				<!-- ko if: !selected() && autocomplete().length -->
+				<ul class="collection" style="position: absolute; left: 0; top: 0; width: 200px;">
+					<!-- ko foreach: autocomplete()-->
+					<li class="collection-item"
+						style="width: 100%"
+						data-bind="text: $data.symbol,
+				css: {'active': $data.symbol === $parent.selectedrow().symbol},
+				click: function(){$parent.selectkeyword($data)}"></li>
+					<!-- /ko -->
+				</ul>
+				<!-- /ko -->
+			</div>
+		</div>
+	</li>
+</ul>

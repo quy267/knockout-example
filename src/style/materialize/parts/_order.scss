@@ -1,0 +1,508 @@
+.order{
+  .btn-size-s{
+	@include break-points-l {
+	  padding: 0 6px;
+	}
+	.device-sp &{
+	  padding: 0 8px;
+	  height: 3rem;
+	  line-height: 3rem;
+	  min-width: 4rem;
+	}
+	&.btn-value-order {
+	  min-width: 4rem;
+	}
+  }
+  .data-table{
+	.th,.td{
+	  vertical-align: middle;
+	  padding: 4px 2px;
+	}
+  }
+  .device-pc &{
+	@include break-points-l {
+	  position: relative;
+	  z-index: 990;
+	}
+  }
+  background: $bgColor;
+  .actionpage &{
+	background: transparent !important;
+  }
+}
+
+.order-nav-btns {
+	padding: 0 5px;
+	margin: 5px 0;
+  .device-sp & {
+	padding: 0;
+	margin: 5px;
+	.btn-size-s{
+	  padding: 0 6px;
+	  min-width: 3rem;
+	}
+  }
+  a{
+	padding-bottom: 5px;
+  }
+}
+
+.order-form-lower-container {
+	padding: 5px;
+  	min-height: 17rem;
+	margin-bottom: 0;
+  .device-sp & {
+	min-height: 350px;
+  }
+  .settlementsell &, .settlementbuy & {
+	min-height: 18rem;
+	.device-sp & {
+	  min-height: 340px;
+	}
+  }
+  .correctbuy & {
+	min-height: 14.5rem;
+	.device-sp & {
+	  min-height: 400px;
+	}
+  }
+  .settlementgenwatasi & {
+	min-height: 11rem;
+	.device-sp & {
+	  min-height: 250px;
+	}
+  }
+   .cancelbuy & ,.settlementgenbiki & {
+	min-height: 10rem;
+	.device-sp & {
+	  min-height: 200px;
+	}
+  }
+	.order-form-btn {
+		text-align: right;
+	  .device-sp & {
+		margin-top: 10px;
+	  }
+		a {
+			margin-bottom: 3px;
+		  .device-sp & {
+			margin-bottom: 10px;
+		  }
+		}
+	}
+}
+
+.order-button {
+  &.active {
+	background: $black;
+	.device-sp & {
+	  background: #08b5cc;
+	}
+  }
+}
+.order-button-buy {
+  color: $plusColor;
+  border: 1px $plusColor solid;
+  background: $white;
+  font-weight: bold;
+  &.active {
+	background: $plusColor;
+	color: $white;
+  }
+  &.btn-hover-blue:hover {
+	color: $white;
+  }
+}
+.order-button-sell {
+  color: darken($minusColor, 20%);
+  border: 1px $minusColor solid;
+  background: $white;
+  font-weight: bold;
+  &.active {
+	background: $minusColor;
+	color: $white;
+  }
+  &.btn-hover-blue:hover {
+	color: $white;
+  }
+}
+.order-button-sell, .order-button-buy {
+  margin-left: -1px !important;
+  margin-right: -1px !important;
+  min-width: 2rem;
+}
+
+.order-button-condition {
+  color: $black;
+  border: 1px $gray solid;
+  background: $white;
+  font-weight: bold;
+  font-size: $fontXS;
+  margin-left: -2px !important;
+  margin-right: -2px !important;
+  &.active {
+	background: $plusColor;
+	color: $white;
+  }
+  &.btn-hover-blue:hover {
+	color: $white;
+  }
+}
+
+@if $type == white {
+  .stockbuy {
+	.order-form-lower-container {
+	  background: lighten($plusColor, 45%);
+	}
+  }
+  .stocksell {
+	.order-form-lower-container {
+	  background: lighten( $minusColor, 44% );
+	}
+  }
+  .marginbuy {
+	.order-form-lower-container {
+	  background: lighten( $plusColor, 45% );
+	}
+  }
+  .marginsell {
+	.order-form-lower-container {
+	  background: lighten( $minusColor, 44% );
+	}
+  }
+  .settlementbuy {
+	.order-form-lower-container {
+	  background: lighten( $plusColor, 45% );
+	}
+  }
+  .settlementsell {
+	.order-form-lower-container {
+	  background: lighten( $minusColor, 44% );
+	}
+  }
+  .settlementgenbiki {
+	.order-form-lower-container {
+	  background: lighten( $plusColor, 45% );
+	}
+  }
+  .settlementgenwatasi {
+	.order-form-lower-container {
+	  background: lighten( $minusColor, 44% );
+	}
+  }
+  .correctbuy {
+	.order-form-lower-container {
+	  background: lighten( $darkgrey, 40% );
+	}
+  }
+  .cancelbuy {
+	.order-form-lower-container {
+	  background: lighten( $darkgrey, 40% );
+	}
+  }
+} @else {
+  .stockbuy {
+	.order-form-lower-container {
+	  background: #6b3446;
+	}
+  }
+  .stocksell {
+	.order-form-lower-container {
+	  background: #4b7088;
+	}
+  }
+  .marginbuy {
+	.order-form-lower-container {
+	  background: #6b3446;
+	}
+  }
+  .marginsell {
+	.order-form-lower-container {
+	  background: #4b7088;
+	}
+  }
+  .settlementbuy {
+	.order-form-lower-container {
+	  background: #6b3446;
+	}
+  }
+  .settlementsell {
+	.order-form-lower-container {
+	  background: #4b7088;
+	}
+  }
+  .settlementgenbiki {
+	.order-form-lower-container {
+	  background: #6b3446;
+	}
+  }
+  .settlementgenwatasi {
+	.order-form-lower-container {
+	  background: #4b7088;
+	}
+  }
+  .correctbuy {
+	.order-form-lower-container {
+	  background: darken( $darkgrey, 10% );
+	}
+  }
+  .cancelbuy {
+	.order-form-lower-container {
+	  background: darken( $darkgrey, 10% );
+	}
+  }
+}
+
+.order-form-upper-container {
+  	background: $orderformUpperColor;
+
+	.row {
+		margin-bottom: 0;
+	}
+	.order-form-btn {
+		text-align: right;
+		margin-top: 20px;
+		a {
+			margin-bottom: 3px;
+		}
+	}
+}
+
+.order-form-element {
+	display: inline-block;
+	vertical-align: top;
+  	margin-bottom: 0.2rem;
+  	margin-left: 0.2rem;
+  	margin-right: 0;
+	line-height: $button-line-height;
+  .material-icons {
+	height: 2em;
+  }
+  .device-sp & {
+	margin-right: 0;
+	margin-left: 0;
+	vertical-align:middle;
+	margin-bottom:5px;
+  }
+  input.browser-default[type=password] {
+	width: 9rem !important;
+	.device-sp & {
+	  width: 9rem !important;
+	}
+  }
+  &.order-form-estimatecost{
+	float:right;
+	text-align:right;
+	line-height:1.5rem;
+  }
+  .device-pc &{
+	&.insider {
+	  word-wrap: break-word;
+	  width: 9rem;
+	  line-height: 1.3rem;
+	  position: relative;
+	  top: $insider-position-top;
+	  @include break-points-m {
+		width: 10rem;
+	  }
+	  @media screen and (max-width: $insider-break-point){
+		position: static !important;
+	  }
+	  &.position-static {
+		position: static;
+	  }
+	  [type="checkbox"] {
+		+ label {
+		  padding-left: 15px;
+		}
+	  }
+	}
+  }
+  @for $i from 5 through 10 {
+	.wcomplex-#{$i} & {
+	  &.insider {
+		position: static;
+		@include break-points-m {
+		  position: relative;
+		}
+		@media screen and (max-width: 768px){
+		  position: static;
+		}
+	  }
+	}
+  }
+.device-tablet & {
+  &.insider {
+	word-wrap: initial;
+	width: 10rem;
+  }
+}
+.btn-square{
+	height: $button-height;
+	width: $button-height;
+	line-height: $button-line-height;
+  }
+  select.select-size-s{
+	height: 1.5rem;
+	padding: inherit;
+	width: 7rem;
+	.device-sp & {
+	  height: 3rem;
+	  width: 8rem;
+	}
+  }
+  .btn-size-s{
+	height: $button-height;
+	line-height: $button-line-height;
+  }
+  &.password-element{
+	.device-sp & {
+	  div{
+		display: inline;
+	  }
+	  width: 100%;
+	}
+  }
+.btn i{
+  line-height: $button-line-height;
+  .device-sp & {
+	line-height: 1rem;
+  }
+}
+  .isreverseorder-text{
+	padding: 0 3px;
+  }
+  .device-sp & {
+	.btn-square{
+	  width: 3rem;
+	  height:3rem;
+	  line-height:3rem;
+	  font-size:1.5rem;
+	}
+	.btn-rectangle{
+	  width: 4rem;
+	}
+	input{
+	  height: 3rem !important;
+	&.orderinput-width{
+	  width: 6rem !important;
+	  padding: 3px;
+	}
+	}
+	label{
+	  font-size: $fontM;
+	  &.label-font{
+		font-size: $fontLL;
+	  }
+	}
+	&.insider{
+	  label{
+		white-space: nowrap;
+	  }
+	}
+	&.order-device-sp-width{
+	  @media screen and (max-width: 360px) and (orientation: portrait),
+	  screen and (max-width: 568px) and (orientation: landscape) {
+	  select{
+		font-size: 12px;
+		width: 6rem;
+	  }
+	  .btn-square{
+		width: 2.5rem !important;
+	  }
+	  .orderinput-width{
+		width: 80px !important;
+	  }
+	}
+	}
+  }
+}
+.remember-skip label{
+  font-size: $fontM;
+}
+
+// autocomplete is invalidated
+.dummy-password {
+	visibility:hidden !important; height: 1px !important; width: 1px !important;
+}
+
+.orderamountsetting {
+	display: none;
+	input[type=text] {
+		width: calc(100% - 1rem);
+	  .device-sp & {
+		width: calc(100% - 1.5rem);
+		padding: 3px;
+	  }
+	}
+}
+
+.orderinput-width {
+  width: 6rem !important;
+}
+
+// Toast for CMMG
+.toast {
+	.cmmgmessage {
+		.title {
+		}
+		.message {
+		}
+	}
+}
+
+.order-confirm-page{
+  margin-top: 5px;
+  .data-table  {
+	.th{
+	  min-width: 9rem !important;
+	}
+	span.label.correction{
+	  color: $accentColor;
+	  font-weight: bold;
+	}
+  }
+  .OrderInfoPanelArea,.OrderValuePanelArea{
+	margin: 5px;
+	border: 1px solid $btnStateBaseColor;
+	.col.s12{
+	  padding: 0;
+	}
+	a.btn{
+	  width:100%;
+	  border-radius: 0;
+	}
+  }
+}
+
+.OrderCompletePanelArea{
+  margin: 20px 5px;
+.device-sp & {
+.btn {
+    min-width: 6rem;
+    height: 3rem;
+    line-height: 3rem;
+      }
+}
+}
+
+.order-ad {
+  width:210px;
+  height: 220px;
+  position: absolute;
+  left: 10px;
+  margin-top: -20px;
+}
+
+.OrderContractDetailPanelArea{
+  margin: 5px 5px 20px;
+}
+
+.gyakusashinelabel {
+	color: $bgColor;
+	background-color: $fontColor;
+	padding: 2px 2px;
+	&:after {
+		content:'逆';
+	}
+}

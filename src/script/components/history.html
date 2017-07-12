@@ -1,0 +1,23 @@
+<!-- ko if: isLoading() -->
+<div class="row">
+	<a class="center-align"><i class="large material-icons">loop</i></a>
+</div>
+<!-- /ko -->
+<!-- ko if: history -->
+<div class="row">
+	<h3 class="red-text darken-2" data-bind="text: history().date"></h3>
+
+	<div class="" data-bind="text: history().url"></div>
+	<div data-bind="if: history().events">
+		<div class="row" data-bind=" foreach: history().events">
+			<div class="section row item-row">
+				<h5 data-bind="text: text"></h5>
+
+				<div data-bind="text: year"></div>
+				<div data-bind="html: html"></div>
+			</div>
+			<div class="divider"></div>
+		</div>
+	</div>
+</div>
+<!-- /ko -->

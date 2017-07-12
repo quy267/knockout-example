@@ -1,0 +1,169 @@
+.datagrid-table {
+  input, select {
+    height: auto;
+    width: 100%;
+    display: inline !important;
+  }
+  a.btn {
+    height: auto;
+    line-height: 1.5rem;
+    margin-top: -4px;
+  }
+  [type="checkbox"] {
+    + label {
+      height: auto;
+      display: block;
+    }
+  }
+  [type="checkbox"]:checked {
+    + label:before {
+      left: 2px;
+    }
+  }
+  .datagrid-body-row {
+    cursor: auto !important;
+  }
+
+  .datagrid-body-col {
+    &.datagrid-body-col1{
+      .input-radio-padding{
+        padding: 0 !important;
+      }
+    }
+    input[type=text]{
+      height: 1.5rem !important;
+      line-height:1.5 !important;
+      padding: 0px 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .device-sp & {
+        height: 2rem;
+        position: static;
+      }
+    }
+    .btn{
+      .device-sp & {
+        margin: 2px;
+        height: 2rem;
+        line-height: 2rem;
+      }
+    }
+  }
+}
+
+.datagrid-table .datagrid-body-row:hover{
+  background-color: $datagrid-hover-color !important;
+}
+
+.datagrid {
+    .collection{
+      left: 10rem;
+    }
+  .datagrid-footer {
+    .datagrid-pager {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: right;
+      select {
+        display: inline;
+        width: auto;
+        height: 1.7rem;
+      }
+
+      a{
+        @if $type == white {
+          color: $black !important;
+        } @else {
+          color: $white !important;
+        }
+        padding: 5px 10px;
+        &:hover:not(.disabled){
+          background:$panelhoverColor;
+        }
+        &.page.active{
+          font-weight: bold;
+          background:$panelhoverColor;
+        }
+      }
+        .device-sp & {
+          span{
+          letter-spacing: -3px;
+          }
+          a{
+            padding: 5px 8px !important;
+          }
+        }
+      }
+  }
+
+//tablet
+  .device-tablet & {
+    .datagrid-body-col {
+      &.datagrid-body-col1 {
+        &.datagrid-fixed {
+          span{
+            vertical-align: middle;
+          }
+          div.left-align{
+            input[type=text] {
+              height: 22px;
+              margin-left: -6px;
+              &.browser-default{
+                box-shadow: none !important;
+              }
+            }
+            ::-webkit-input-placeholder {
+              padding-top: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .strong {
+    font-size: $fontLL +3 !important;
+    font-weight: bold !important;;
+    line-height: 1.1 !important;;
+  }
+  .strong2 {
+    font-size: $fontL + 2 !important;
+    font-weight: bold !important;;
+    line-height: 1.1 !important;;
+  }
+  .pricechange{
+    .device-sp & {
+     // font-size: $fontM;
+    }
+  }
+}
+
+.asset-list {
+  height: 300px;
+}
+.information-list {
+  height: 120px;
+  padding-bottom: 0;
+  .device-sp & {
+      height: 90px;
+  }
+}
+.domesticindex-list {
+  height: 380px;
+}
+.ranking-list {
+  height: $ranking-list-height;
+  margin-bottom: 0px;
+  padding: 0 5px 5px !important;
+}
+.ranking-list2 {
+  height: $ranking-list-height;
+  padding: 0 5px 5px !important;
+}
+.left-align.sl{
+  line-height: 1.3rem;
+  span{
+    vertical-align:middle;
+  }
+}

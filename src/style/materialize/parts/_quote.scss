@@ -1,0 +1,197 @@
+.quote-block {
+	border-left: 1px solid $thingray;
+	font-size: $fontS;
+	.col {
+		padding: 0 3px;
+	}
+	.device-sp & {
+	  font-size: $fontLL;
+      border: 1px solid $thingray;
+      border-top: none;
+	}
+  .device-sp.portrait & {
+    .quote-table{
+      height: 154px;
+    }
+  }
+}
+
+.quote-head {
+	padding: 2px 0 0 0;
+	.change-icon {
+		font-size: $fontL;
+	}
+	.up {
+		.change-icon {
+			color: $plusColor;
+		}
+	}
+	.down {
+		color: $minusColor;
+	}
+	.change-val {
+		font-size: $fontXL;
+		font-weight: bold;
+		margin: 0 3px;
+	}
+}
+
+.quote-table,.data-table {
+	display: table;
+	width: 100%;
+	.row {
+		display: table-row;
+	}
+	th,td,.th,.td {
+		padding: $tableMinPadding;
+		font-weight: normal;
+		border-radius: 0;
+		@if $type == white {
+		  border: 1px solid $white;
+		} @else {
+		  border: 1px solid $black;
+		}
+		line-height: 1.1;
+		@include break-points-s  {
+		  line-height: 1.4;
+		}
+		display: table-cell;
+		float: none!important;
+	}
+	th,.th {
+	  @if $type == white {
+		background: lighten($gray, 5%);
+	  } @else {
+		color: $white;
+		background: darken($darkgrey, 15%);
+	  }
+	  fundamental & {
+		font-size: $fontXS - 0.5px;;
+		padding: 0 !important;
+			&.bigger{
+				font-size: $fontXS + 1px;
+			}
+	  }
+	}
+	td,.td {
+		font-weight: bold;
+		@if $type == white {
+		  background: $thinWhite;
+		} @else {
+		  background: $trueblack;
+		}
+	}
+	.device-sp & {
+		th,.th {
+		  font-size: $fontLL;
+		}
+		th,td,.th,.td {
+			padding: 2px;
+		}
+		td,.td {
+  		@if $type == white {
+  		  background: $thinWhite;
+  		} @else {
+  		  background: $dimgray;
+  		}
+  	}
+	}
+}
+
+.chart-image {
+	text-align: center;
+	margin-top: 5px;
+	img {
+		max-width: 100%;
+	}
+}
+
+.price-status-label {
+  @if $type == white {
+	background: $trueblack;
+	color: $white;
+  } @else {
+	background: $white;
+	color: $trueblack;
+  }
+  border-radius: 2px;
+  padding: 0px 4px;
+
+  .device-sp & {
+	position: relative;
+	border-radius: 0 0 50px 50px;
+	height: 25px;
+	width: 50px;
+	box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.3);
+	line-height: 1.5rem;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px !important;
+	z-index: 3;
+
+	&.label{
+	  border-radius: 5px;
+	  font-size :11px !important;
+	  line-height: initial;
+	}
+  }
+
+}
+.trading-status-label {
+  background: $paleblue;
+  color: $white;
+  border-radius: 2px;
+  padding: 2px 2px;
+  cursor: pointer;
+	line-height: 0.8rem;
+	width: 2rem;
+	margin-right: 3px;
+  .device-sp & {
+		line-height: 2.2rem;
+		width: 4rem;
+  }
+}
+.account-label {
+  @if $type == white {
+	background: $trueblack;
+	color: $white;
+  } @else {
+	background: $white;
+	color: $trueblack;
+  }
+  border-radius: 2px;
+  font-size: $fontM;
+  display: inline-block;
+  width: 1.5rem;
+  text-align: center;
+}
+.trading-status-label.attention {
+	background: $red;
+	font-size: $fontXS - 1px;
+}
+.stock-status-label {
+	 background: $gray;
+	 color: $white;
+	 line-height: 0.7rem;
+	 border-radius: 3px;
+	 padding: 1px 1px;
+	 font-size: $fontXS - 1px;
+	 min-width: 2.5rem;
+	 display: inline-block;
+	 &.first {
+		 margin-bottom: 0.2rem;
+	 }
+	 &.active {
+		 background: $paleblue;
+	 }
+	 .device-sp & {
+		 font-size: $fontS;
+		 min-width: 3.5rem;
+		 line-height: 1rem;
+	 }
+}
+.stock-notice {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}

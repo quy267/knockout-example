@@ -1,0 +1,53 @@
+<div class="row">
+	<form class="col s12">
+		<div class="row relative">
+			<div class="switch timesheet-date-type-switch">
+				<label class="active"><input type="checkbox" data-bind="checked: allowRangePick, event: {change: toggleRangePicker}"><span class="lever"></span></label>
+			</div>
+			<!-- ko ifnot: allowRangePick -->
+			<div class="input-field col s12">
+				<input placeholder="Pick a date" id="date" type="date" class="datepicker" data-bind="value: date">
+				<label class="active" for="date">Date</label>
+			</div>
+			<!-- /ko -->
+			<!-- ko if: allowRangePick -->
+			<div class="input-field col s6">
+				<input placeholder="From" id="date-start" type="date" class="datepicker" data-bind="value: dateStart">
+				<label class="active" for="date-start">Date</label>
+			</div>
+			<div class="input-field col s6">
+				<input placeholder="To" id="date-end" type="date" class="datepicker" data-bind="value: dateEnd">
+				<label class="active" for="date-end"></label>
+			</div>
+			<!-- /ko -->
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="start" class="timepicker" data-bind="value: start">
+				<label for="start">Start</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="end" class="timepicker" data-bind="value: end">
+				<label for="end">End</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+				<label class="active">Time Spent</label>
+				<span data-bind="text: timeSpent, css: timeSpentStatus">00:00</span>
+			</div>
+			<div class="input-field col s6">
+				<label class="active">Over Time</label>
+				<span data-bind="text: overTime">00:00</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<label>Note</label>
+				<textarea class="materialize-textarea" placeholder="Note"></textarea>
+			</div>
+		</div>
+	</form>
+</div>

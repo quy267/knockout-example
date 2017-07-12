@@ -1,0 +1,89 @@
+.ranking-tab {
+  margin-bottom: 0px !important;
+  .tabs {
+    height: $tabs-height;
+    .tab {
+      height: $tabs-height;
+      line-height: $tabs-line-height;
+    }
+  }
+}
+.ranking-area {
+  .col {
+    padding: 0px !important;
+  }
+  .datagrid .datagrid-table {
+    overflow-x: hidden;
+  }
+}
+.news-title{
+  color: $white;
+  background: $subColor;
+  padding: 5px 0px;
+}
+.newsdetail {
+  pre{
+    font-family: Osaka-Mono, "MS Gothic", monospace;
+  }
+}
+.complimentary-list {
+  height: 265px;
+  overflow-y: auto;
+}
+.complimentary-body {
+  overflow-y: auto;
+}
+
+.wide {
+  .wide-text-overflow {
+    text-overflow:clip !important;
+  }
+}
+
+
+// 市場統計リストのgraph
+marketstatisticsgraph {
+  .title, .axis {
+    height: 10%;
+  }
+  .graph {
+    height: 70%;
+    .col {
+      height: 100%;
+      .meter {
+        height: 100%;
+        position: relative;
+
+        & > .rating3 {
+          background-color: $plusColor;
+          position: absolute;
+          bottom:0;
+          width:100%
+        }
+        & > .rating2 {
+          background-color: rgb(171, 171, 171);
+          position: absolute;
+          bottom:0;
+          width:100%
+        }
+        & > .rating1 {
+          background-color: $minusColor;
+          position: absolute;
+          bottom:0;
+          width:100%
+        }
+
+        & > .value {
+          display: block;
+            position: absolute;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+.maretstatisticsgraph-border {
+  border-top: $gray 1px solid;
+}

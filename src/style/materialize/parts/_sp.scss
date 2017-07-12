@@ -1,0 +1,458 @@
+.device-sp {
+  	.Page {
+	  overflow-x: hidden;
+	}
+	@if $type == white {
+	  background: $white;
+	} @else {
+	  background: $trueblack;
+	}
+	.HeaderArea {
+		height: auto;
+		text-align: center;
+	}
+  .second-information {
+	@if $type == white {
+	  color: $midgrey;
+	} @else {
+	  color: $midgrey;
+	}
+  }
+  .newsdetail {
+	max-height: 250px;
+	overflow-y: auto;
+  }
+  .ranking-number {
+	z-index: -1;
+	position: absolute;
+	bottom: 0px;
+	font-size: $fontRankingNumber;
+	font-weight: bold;
+	left: 0px;
+	@if $type == white {
+	  color: $gray;
+	} @else {
+	  color: $darkgrey;
+	}
+  }
+  .complimentarydetailcontainer {
+	height: 200px;
+  }
+  .complimentarydetail {
+	height: 160px;
+	overflow-y: auto;
+	margin-top: 0;
+  }
+  .input-login {
+	font-size: $fontHeaddingName;
+  }
+  .order {
+	width: 100%;
+	background: $bgColor;
+  }
+  .actionpage {
+	.order {
+	  width: 100%;
+	  z-index: 100;
+	  position: absolute;
+	  background: $bgColor;
+	}
+  }
+  .BodyArea, .actionpage{
+  	input[type=text],input[type=password]{
+		font-size: $fontLL;
+	}
+	::-webkit-input-placeholder {
+		line-height: 1.5rem;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		line-height: 1.5rem;
+	}
+	::-moz-placeholder {  /* Firefox 19+ */
+		line-height: 1.5rem;
+	}
+	:-ms-input-placeholder {
+		line-height: 1.5rem;
+	}
+  }
+  .login-ad {
+	width:210px;
+	height: 210px;
+	position: relative;
+	left: calc(50% - 110px);
+  }
+  .nav-wrapper {
+	overflow: hidden;
+	.material-icons {
+	  line-height: 1.2;
+	  height: 10px;
+	  //margin-left:	3px;
+	&.groupmenuicon{
+	  line-height: inherit;
+	  height: inherit;
+	}
+	}
+	.header-menu {
+	  font-size: $fontXS;
+	}
+	> a{
+	  display: block;
+	  text-align: center;
+	  text-align: -webkit-center;
+      margin-top: -3px;
+	}
+  }
+  input#brandseach-input.browser-default{
+	  height:2rem !important;
+	}
+
+
+  .order {
+	.datagrid-body-col {
+	  input[type=text] {
+		  height: 2.5rem !important;
+		  margin-top: 0;
+	  }
+	  [type="radio"] + label{
+		display: inline;
+		line-height: 3rem;
+	  }
+	}
+  }
+  .btn-order {
+	width: 100%;
+	height: 4rem;
+	line-height: 4rem;
+	font-size: $fontXXL;
+  }
+  .asset {
+	.tabs-child {
+	  .tabs {
+		margin-bottom: 0 !important;
+	  }
+	}
+  }
+  ko-datagrid[useswitchingview=on] {
+	.datagrid .datagrid-table .datagrid-body-wrapper {
+	  overflow-x: hidden;
+	}
+  }
+  #phonereversedailyinterestlist{
+	margin-bottom: 40px;
+  }
+  .BodyArea.showList {
+    margin-bottom: 36px !important;
+  }
+
+  .bottom-menu {
+    position: fixed;
+    z-index: 990;
+    bottom: 0;
+    width: 100%;
+    .tabs {
+      border-bottom: none;
+      .tab {
+        margin-top: 0px;
+        min-width: 80px;
+        a {
+          background-color: #000000;
+          color: white;
+          font-size: 12px;
+          border-radius : 0;
+          border-width: 1px;
+          border-color: black;
+          border-style: solid;
+          &.active {
+            border-bottom: 5px solid $accentColor;
+          }
+          &.two-row {
+            line-height: 1.2;
+            padding-top: 0.3rem;
+          }
+        }
+      }
+    }
+    .header-menu {
+      font-size: $fontXS;
+    }
+  }
+  .bottomMenuComponent {
+    margin-bottom: 28px;
+  &.caution-margin-bottom {
+    margin-bottom: 78px;
+  }
+  }
+  .ListComp {
+	select.select-size-m {
+	  height: 28px !important;
+	}
+    .caution-text {
+      font-size: 0.7rem;
+      padding: 5px;
+      background: $bgColor;
+    }
+  }
+  .smartphonestockdetailcontents {
+  }
+  &.ipad {
+    .half-circle-button-bottom {
+      bottom: 471px;
+    }
+  }
+  .half-circle-button-bottom {
+    position: fixed;
+    bottom: 248px;
+    left: calc(50% - 25px);
+    border-radius: 50px 50px 0 0;
+    height: 25px;
+    width: 50px;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	box-shadow: 1px 0px 0px 0px rgba(0,0,0,0.3);
+    @if $type == white {
+      background: $white;
+	  border-top-color: $silver;
+	  border-right-color: $silver;
+	  border-left-color: $silver;
+    } @else {
+      background: $trueblack;
+	  border-top-color: $darkgrey;
+	  border-right-color: $darkgrey;
+	  border-left-color: $darkgrey;
+    }
+    line-height: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px !important;
+    z-index: 3;
+  }
+  .half-circle-button-right {
+    position: fixed;
+    bottom: 49%;
+    left: calc(41.6% - 22px);
+    border-radius: 50px 0px 0px 50px;
+    height: 50px;
+    width: 25px;
+	border-top: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	box-shadow:-2px 2px 1px 0px rgba(0,0,0,0.3);
+    @if $type == white {
+      background: $white;
+	  border-top-color: $silver;
+	  border-left-color: $silver;
+	  border-bottom-color: $silver;
+    } @else {
+      background: $trueblack;
+	  border-top-color: $darkgrey;
+	  border-left-color: $darkgrey;
+	  border-bottom-color: $darkgrey;
+    }
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px !important;
+    z-index: 3;
+  }
+
+  .HeaderArea {
+    border-right: 5px solid $accentColor;
+    border-top: none;
+  }
+
+  smartphonestockdetail, smartphoneindexdetail{
+    .tabs{
+      border-bottom: none;
+      .tab{
+        margin-top: 0px;
+        a.active {
+          border-bottom: none;
+        }
+      }
+    }
+    .quote-table{
+      th{
+        width: 7rem;
+        font-size: 0.8rem;
+      }
+      td{
+        span {
+          display: inline;
+        }
+      }
+    }
+
+    .index-detail-chart, .stock-detail-chart {
+      .position-relative{
+        position: relative;
+        ul{
+          margin:0;
+        &.tabs {
+          width: calc(100% - 6rem);
+        }
+        }
+        select {
+          width: 5.8rem;
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: 0.8rem;
+          height: 28px !important;
+        }
+      }
+      .pandf-chart{
+        .col{
+          font-size: 0.7rem !important;
+          line-height: 2rem;
+        }
+      input{
+        font-size: 0.8rem;
+        width: 3rem !important;
+        height: 2rem !important;
+      }
+      }
+    }
+  }
+  .detail-brand-val{
+	.currentprice{
+	  font-size: 25px;
+	}
+  }
+  .stock-detail-chart{
+	.pandf-chart{
+		.col.s3:nth-child(1),
+		.col.s3:nth-child(3){
+			font-size: $fontXS; 
+			padding-top: 6px;
+			padding-left: 2px;
+		}
+		input{
+			height: 2rem !important;
+		}
+	}
+  }
+  .asset, .bottom-menu{
+    .tabs{
+      height:36px !important;
+      border-bottom: none;
+      .tab{
+        height:36px !important;;
+        line-height:36px !important;
+      }
+    }
+  }
+  .tabs-low{
+    .tabs{
+      height:32px;
+      border-bottom: none;
+      .tab{
+        height:32px;
+        line-height:32px;
+        margin-top: 0px;
+        a.active {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  smartphonestockdetail, smartphoneindexdetail, smartphoneanalysisnavipanel {
+    .tabs{
+      height:36px;
+      .tab{
+        height:36px;
+        line-height:36px;
+      }
+    }
+  }
+}
+.device-sp.landscape {
+  .ContentsArea.subView{
+	@if $type == white {
+	  border-left: 1px solid $silver;
+	} @else {
+	  border-left: 1px solid $darkgrey;
+	}
+  }
+}
+.device-sp.portrait{
+  .ContentsArea.subView{
+	@if $type == white {
+	  border-top: 1px solid $silver;
+	} @else {
+	  border-left: 1px solid $darkgrey;
+	}
+  }
+}
+
+
+.portraitListAndDetail{
+  .subView {
+    div, span, td, th, .td, .th {
+      font-size: 0.9rem !important;
+    }
+    .strong {
+      font-size: 0.95rem !important;
+    }
+    .btn-size-s, .btn-setting .material-icons, .order-form-element .btn-square, input, select.browser-default {
+      height: 2rem !important;
+      line-height: 2rem !important;
+    }
+    input[type=text], input[type=password] {
+      font-size: 0.9rem !important;
+    }
+    .quote-table{
+      td, th, .td, .th {
+        padding: 0 2px !important;
+      }
+    }
+  }
+
+}
+
+.mailsettings {
+&.data-table {
+	border: 1px solid #000;
+	.td, .th {
+	  float: left !important;
+	}
+	.td:before, .th:before {
+	  display: table;
+	  float: left;
+	  height: 22px;
+	  content: "";
+	}
+  }
+}
+.data-table{
+  .confidence-table{
+	margin-bottom: 5px;
+	td{
+	  text-align: right;
+	}
+  }
+  &.fundamental{
+	.device-sp & {
+	  .th,.td{
+		vertical-align: middle;
+		br{
+		  @media only screen and (min-width: 420px){
+			display: none;
+		  }
+		}
+	  }
+	}
+  }
+  &.genwatashi{
+	.device-sp & {
+	  .th {
+		@media only screen and (max-width: 420px) {
+		  font-size: $fontM;
+		  br {
+			display: none;
+		  }
+		}
+	  }
+	}
+  }
+}

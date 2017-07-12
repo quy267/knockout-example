@@ -1,0 +1,17 @@
+<div class="table-row row valign-wrapper" data-bind="css: row.holidayClass">
+	<div class="table-col col s1" data-bind="text: row.date, click: function(){setSideHistory(row.date)}"></div>
+	<div class="table-col col s1" data-bind="html: row.holiday.text"></div>
+	<div class="table-col col s1">
+		<div class="input-field inline">
+			<input class="timepicker" type="text" data-bind="value: startTime"/>
+		</div>
+	</div>
+	<div class="table-col col s1">
+		<div class="input-field inline">
+			<input class="timepicker" type="text" data-bind="value: endTime"/>
+		</div>
+	</div>
+	<div class="table-col col s1" data-bind="text: timeSpent().formated, css: timeSpent().timeSpendClass"></div>
+	<div class="table-col col s1" data-bind="text: overTime"></div>
+	<div class="table-col col s6"><input type="text"/></div>
+</div>

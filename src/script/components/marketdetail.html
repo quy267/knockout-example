@@ -1,0 +1,15 @@
+<div class="modal-content">
+	<h4 id="market-name" data-bind="text: data().venuename"></h4>
+	<p>Tab A: <span data-bind="numberFormat: data().tapea"></span></p>
+	<p>Tab B: <span data-bind="numberFormat: data().tapeb"></span></p>
+	<p>Tab C: <span data-bind="numberFormat: data().tapec"></span></p>
+</div>
+<div class="modal-footer">
+	<div class="right">
+		<a href="javascript: void(0)" class=" btn waves-effect waves-white btn-flat blue white-text"
+		   data-bind="click: function(){ previtem()}, css: btndisable().prevbtn">Prev</a>
+		<a href="javascript: void(0)" class=" btn waves-effect waves-white btn-flat blue white-text"
+		   data-bind="click: function(){ nextitem()}, css: btndisable().nextbtn">Next</a>
+	</div>
+	<a href="javascript: void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+</div>

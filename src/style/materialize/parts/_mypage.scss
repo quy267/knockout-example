@@ -1,0 +1,178 @@
+.mypagepanel {
+  timeseries .fit-to-bottom {
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+
+  stockdetailchart .fit-to-bottom {
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+
+  outstandingbalance .fit-to-bottom {
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+
+  complexnewslist .fit-to-bottom {
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+
+  stockboard .fit-to-bottom {
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+
+  .domesticindex-list {
+    height: 15rem;
+    .inlinechart {
+      max-height: 5rem;
+      min-height: 5rem;
+    }
+  }
+
+  mypageranking, mypagestockboard, mypagecomplex, mypageprofitandloss {
+    >.row{
+      >.col {
+        padding: 0;
+      }
+    }
+  }
+
+  .order-form-lower-container {
+    min-height: 0;
+  }
+
+  .orderboargrid {
+    // under/overと指値部分のseparator
+    .separator > td {
+      border-bottom: 1px solid $accentColor;
+    }
+
+    // ドラッグ可能カラム
+    .draggable_column {
+      cursor: pointer;
+    }
+
+    // 現物注文時の現物カラム(右)
+    .disable_column {
+      background: gray;
+    }
+
+    // ドロップ無効領域
+    .invalid_drop_column, .invalid_drop_row > td {
+      background: gray;
+    }
+
+    // 現在値
+    .currentprice {
+      background: #cae582;
+    }
+
+    // 買（売）注文カラム信用新規あり
+    .marginorder {
+      color: blue;
+    }
+
+    // 買（売）注文カラム信用返済あり
+    .settlementorder {
+      color: red;
+    }
+
+    // 買（売）注文カラム現物・信用新規・信用返済混在
+    .mixorder {
+      color: green;
+    }
+
+  }
+
+  .clicktargetnormail [placeholder="価格"] {
+    border: 1px solid red !important;
+  }
+
+  .clicktargetreverse [placeholder="条件価格"] {
+    border: 1px solid red !important;
+  }
+
+  .orderamountsettingorderboard {
+    display: none;
+    input[type=text] {
+      width: calc(100% - 1rem);
+      .device-sp & {
+        width: calc(100% - 1.5rem);
+        padding: 3px;
+      }
+    }
+  }
+  .block-panel{
+    padding: 0 5px 5px;
+  .headding-panel{
+    line-height: 1.5rem;
+    padding: 3px 3px 3px 5px;
+    margin: 0 0 5px 0;
+  }
+  .mypage_contents{
+    .headding-panel{
+      line-height: inherit;
+    }
+    mypageprofitandloss{
+     .data-table {
+        .td, .th {
+        padding: 2px 5px;
+        }
+      }
+    }
+    ul.tabs{
+      height: 30px;
+      .tab{
+        height:30px;
+        line-height:30px;
+      }
+    }
+    .quote-block{
+      border-left: none;
+    }
+  }
+    .order-form-element{
+        &.insider {
+          position: static;
+          width:initial;
+        }
+        &.password-element {
+          div {
+            display: inline;
+          }
+        }
+    }
+  }
+
+.complex-upper-head {
+  ul.collection{
+    width: 30rem;
+  }
+}
+
+  .dragcancel {
+    padding: 0.5rem;
+    position: absolute;
+    left: 40px;
+    background: $paleblue;
+    border: 1px solid $borderColor;
+  }
+  .dragtip {
+    padding: 0.5rem;
+    position: absolute;
+    background: $paleblue;
+    border: 1px solid $borderColor;
+    z-index: 10;
+  }
+  .amounttip {
+    padding: 0.5rem;
+    position: absolute;
+    background: $paleblue;
+    border: 1px solid $borderColor;
+    z-index: 10;
+    width: 11rem;
+  }
+}
